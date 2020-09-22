@@ -11,6 +11,7 @@
       </div>
       <div>{{ html }}</div>
       <div>{{ json }}</div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="html"></div>
     </div>
   </div>
