@@ -11,6 +11,7 @@
       </div>
       <div>{{ html }}</div>
       <div>{{ json }}</div>
+      <div v-html="html"></div>
     </div>
   </div>
 </template>
