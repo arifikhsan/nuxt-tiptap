@@ -148,20 +148,20 @@
             <h3 class="font-sans text-3xl font-semibold text-green-500">
               HTML
             </h3>
-            <div class="break-words">{{ html }}</div>
+            <div class="mt-4 break-words">{{ html }}</div>
           </div>
           <div>
             <h3 class="font-sans text-3xl font-semibold text-green-500">
               JSON
             </h3>
-            <div class="break-words">{{ json }}</div>
+            <div class="mt-4 break-words">{{ json }}</div>
           </div>
           <div>
             <h3 class="font-sans text-3xl font-semibold text-green-500">
               Rendered HTML
             </h3>
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="prose break-words lg:prose-xl" v-html="html"></div>
+            <div class="mt-4 prose break-words lg:prose-xl" v-html="html"></div>
           </div>
         </div>
       </div>
