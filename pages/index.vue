@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-5xl mx-auto p-4">
+  <div class="max-w-5xl p-4 mx-auto">
     <div class="py-4 text-center">
-      <h1 class="text-5xl font-bold font-sans text-green-500">TipTap NuxtJS</h1>
+      <h1 class="font-sans text-5xl font-bold text-green-500">TipTap NuxtJS</h1>
     </div>
     <div class="flex flex-col mt-6 space-y-6">
       <div>
