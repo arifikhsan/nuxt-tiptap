@@ -132,14 +132,39 @@
                 </button>
               </div>
             </editor-menu-bar>
-            <editor-content :editor="editor"></editor-content>
+            <editor-content
+              class="prose lg:prose-xl"
+              :editor="editor"
+            ></editor-content>
           </div>
         </client-only>
       </div>
-      <div>{{ html }}</div>
-      <div>{{ json }}</div>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="html"></div>
+      <div>
+        <div class="flex flex-col space-y-6">
+          <div class="py-4 text-center">
+            <h2 class="font-sans text-4xl font-bold text-green-500">Result</h2>
+          </div>
+          <div>
+            <h3 class="font-sans text-3xl font-semibold text-green-500">
+              HTML
+            </h3>
+            <div class="break-words">{{ html }}</div>
+          </div>
+          <div>
+            <h3 class="font-sans text-3xl font-semibold text-green-500">
+              JSON
+            </h3>
+            <div class="break-words">{{ json }}</div>
+          </div>
+          <div>
+            <h3 class="font-sans text-3xl font-semibold text-green-500">
+              Rendered HTML
+            </h3>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div class="prose break-words lg:prose-xl" v-html="html"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -180,7 +205,8 @@ export default {
   },
   mounted() {
     this.editor = new Editor({
-      content: '<p>a paragraph</p>',
+      content:
+        '<h1>Irure&nbsp;exercitation&nbsp;est&nbsp;ut&nbsp;aute&nbsp;excepteur&nbsp;laboris.</h1><p>Excepteur&nbsp;aliqua&nbsp;amet&nbsp;pariatur&nbsp;commodo&nbsp;esse&nbsp;quis&nbsp;cupidatat&nbsp;quis&nbsp;adipisicing&nbsp;mollit.&nbsp;Aliqua&nbsp;sunt&nbsp;incididunt&nbsp;dolore&nbsp;proident&nbsp;adipisicing&nbsp;<strong>enim&nbsp;</strong>sit&nbsp;laborum.&nbsp;Dolore&nbsp;ex&nbsp;<em>reprehenderit&nbsp;</em>deserunt&nbsp;voluptate&nbsp;reprehenderit&nbsp;sint&nbsp;in&nbsp;excepteur.&nbsp;</p><blockquote><p>Deserunt&nbsp;nostrud&nbsp;tempor&nbsp;minim&nbsp;laboris&nbsp;cupidatat&nbsp;consequat&nbsp;minim&nbsp;non&nbsp;excepteur&nbsp;amet.&nbsp;</p></blockquote><p>Cupidatat&nbsp;est&nbsp;Lorem&nbsp;consequat&nbsp;qui&nbsp;occaecat&nbsp;duis&nbsp;sunt&nbsp;sint&nbsp;excepteur&nbsp;non&nbsp;ipsum&nbsp;tempor.&nbsp;</p><h2>Commodo&nbsp;ea&nbsp;amet&nbsp;reprehenderit&nbsp;irure&nbsp;sunt.</h2><p>Consequat&nbsp;quis&nbsp;ullamco&nbsp;cupidatat&nbsp;minim&nbsp;ea&nbsp;duis&nbsp;dolore&nbsp;qui&nbsp;anim.&nbsp;Duis&nbsp;elit&nbsp;eu&nbsp;exercitation&nbsp;elit&nbsp;sit&nbsp;ea&nbsp;sit&nbsp;esse&nbsp;laboris.</p>',
       extensions: [
         new Blockquote(),
         new BulletList(),
@@ -211,3 +237,14 @@ export default {
   }
 }
 </script>
+
+<style>
+.ProseMirror {
+  @apply p-4;
+  @apply border;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+</style>
